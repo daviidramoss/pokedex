@@ -4,9 +4,9 @@ Este proyecto es parte de una entrevista laboral para una empresa para el puesto
 
 Por respeto a la empresa no voy a publicar la prueba ni todos los requerimientos, pero si lo que solicitaban.
 
-He aqui un extracto de lo que pedian.
+He aquí un extracto de lo que pedían.
 
-The features we expect that your api would contain would be:
+"The features we expect that your api would contain would be:
 
 - Search for Pokemon by text.
 - Filter Pokemon by type.
@@ -14,7 +14,7 @@ The features we expect that your api would contain would be:
 - Retrieve `All` Pokemons and `Favorite` Pokemons.
 - Get Pokemon details.
 
-"### Backend 
+### Backend 
 
 Where should you write your solution.
 
@@ -32,16 +32,16 @@ We would like to see your model designer skills so make sure you show them to us
 
 Basicamente un API RESTful.
 
-En el primer commit basicamente hice lo que pidieron, mas no tuve buenas practicas, esto sera corregido en el segundo commit.
+En el primer commit básicamente hice lo que pidieron, más no tuve buenas practicas, esto sera corregido en el segundo commit.
 
-Al momento de hacer este Readme no se si me van a dar el trabajo, pero como siempre hay que quedarse con lo bueno de toda experiencia,
+Al momento de hacer este Readme no sé si me van a dar el trabajo, pero como siempre hay que quedarse con lo bueno de toda experiencia,
 comparto aqui lo aprendido.
 
-1._ Usar nombres pero no verbos siempre en base a los recursos.
+1._ Usar nombres pero no verbos siempre basándonos en los recursos.
 
 Ejemplo: 
 
-Si quieres consultar los pokemons la URI deberia ser:
+Si quieres consultar los pokemons la URI debería ser:
 
 baseUri/pokemons
 
@@ -49,20 +49,20 @@ Una mala practica es usar verbos en la URI:
 
 baseUri/obtenerTodosLosPokemon
 
-2._  La propia semántica que compone la URL, junto con el método  HTTP usado (POST, GET, PUT, DELETE), permite prescindir de verbos como 
+2._ La propia semántica que compone la URL, junto con el método HTTP usado (POST, GET, PUT, DELETE), permite prescindir de verbos como 
 «create», «get», «update» y «delete».
 
-Es decir, debes usar los metodos correspondientes para cada accion que quieras hacer.
+Es decir, debes usar los métodos correspondientes para cada accion que quieras hacer.
 
 Ejemplo: 
 
-Si quieres obtener un pokemon en especifico deberias usar el metodo get por su identificador unico:
+Si quieres obtener un pokemon en específico deberías usar el método get por su identificador único:
 
-baseUri/pokemons/1      -- >     Siendo este un metodo GET
+baseUri/pokemons/1      -- >     Siendo este un método GET
 
 3._ Métodos GET y los parámetros de consulta no deben alterar el estado.
 
-Para actualizar un recurso no deberias usar un metodo GET, usa PUT o PATCH.
+Para actualizar un recurso no deberías usar un método GET, usa PUT o PATCH.
 
 4._ Proveer filtrado, ordenación, selección de campos y paginación para colecciones.
 
@@ -80,7 +80,7 @@ Uso de «offset» para establecer la posición de partida de una colección y «
 Es un sistema flexible para el que consume la API y bastante extendido entre los sistemas de bases de datos.
 
 
-Para este API de ejemplo estas seran las consideraciones, sin embargo hay mucha informacion en internet que amplia esto, para hacer este readme con mi resumen me ayude
+Para esta API de ejemplo estas seran las consideraciones, sin embargo hay mucha información en internet que amplia esto, para hacer este readme con mi resumen me ayude
 de esta lectura:
 
 https://mascandobits.es/programacion/buenas-practicas-para-el-buen-diseno-de-una-api-restful/
