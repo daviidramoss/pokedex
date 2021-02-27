@@ -13,5 +13,5 @@ import javax.validation.constraints.NotNull;
 public class PatchBodyFavoriteDto {
 
     @NotNull
-    private Boolean valor;
+    private Boolean favorito;
 }

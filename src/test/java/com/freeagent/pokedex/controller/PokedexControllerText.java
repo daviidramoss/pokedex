@@ -46,7 +46,7 @@ public class PokedexControllerText {
     @Test
     public void filtrarPokemonPorTexto_ok() {
         //pre
-        List<Pokemon> pokemonList = new ArrayList<Pokemon>();
+        List<Pokemon> pokemonList = new ArrayList<>();
         Pokemon pokemon = new Pokemon();
         pokemon.setNombre("poke_test");
         Modo modo = new Modo();
@@ -57,14 +57,14 @@ public class PokedexControllerText {
         PokemonTipoModo tipoModo = new PokemonTipoModo();
         tipoModo.setModo(modo);
         tipoModo.setTipo(tipo);
-        List<PokemonTipoModo> tipoModoList = new ArrayList<PokemonTipoModo>();
+        List<PokemonTipoModo> tipoModoList = new ArrayList<>();
         tipoModoList.add(tipoModo);
         pokemon.setPokemonTipoModo(tipoModoList);
         pokemonList.add(pokemon);
         doReturn(pokemonList).when(pokemonService).listPokemonByText(Mockito.anyString(), Mockito.anyInt(), Mockito.anyInt());
 
         //act
-        ResponseEntity<List<PokemonDTO>> response = pokedexController.filtrarPokemonPorTexto("Pika", 0, 10);
+        ResponseEntity<List<PokemonDTO>> response = pokedexController.filtrarPokemonPorNombre(0, 10,"pika",5,true);
 
         //assert
         assertNotNull(response);
@@ -78,16 +78,16 @@ public class PokedexControllerText {
     @Test
     public void filtrarPokemonPorTexto_TipoModoPokemonEmpty() {
         //pre
-        List<Pokemon> pokemonList = new ArrayList<Pokemon>();
+        List<Pokemon> pokemonList = new ArrayList<>();
         Pokemon pokemon = new Pokemon();
         pokemon.setNombre("poke_test");
-        List<PokemonTipoModo> tipoModoList = new ArrayList<PokemonTipoModo>();
+        List<PokemonTipoModo> tipoModoList = new ArrayList<>();
         pokemon.setPokemonTipoModo(tipoModoList);
         pokemonList.add(pokemon);
         doReturn(pokemonList).when(pokemonService).listPokemonByText(Mockito.anyString(), Mockito.anyInt(), Mockito.anyInt());
 
         //act
-        ResponseEntity<List<PokemonDTO>> response = pokedexController.filtrarPokemonPorTexto("Pika", 0, 10);
+        ResponseEntity<List<PokemonDTO>> response = pokedexController.filtrarPokemonPorNombre(0, 10,"pika",5,true);
 
         //assert
         assertNotNull(response);
@@ -104,7 +104,7 @@ public class PokedexControllerText {
 
         Pokemon pokemon = new Pokemon();
         pokemon.setNombre("poke_test");
-        List<PokemonTipoModo> tipoModoList = new ArrayList<PokemonTipoModo>();
+        List<PokemonTipoModo> tipoModoList = new ArrayList<>();
         pokemon.setPokemonTipoModo(tipoModoList);
         doReturn(pokemon).when(pokemonService).buscarPokemonPorId(Mockito.anyInt());
 

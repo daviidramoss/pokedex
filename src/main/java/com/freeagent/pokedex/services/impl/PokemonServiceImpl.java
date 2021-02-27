@@ -59,7 +59,7 @@ public class PokemonServiceImpl implements PokemonService {
     @Override
     public Pokemon updateFavorites(Integer idPokemon, PatchBodyFavoriteDto requestBody) {
         Pokemon pokemon = pokemonRepository.findById(idPokemon).orElseThrow(NotFoundException::new);
-        pokemon.setFavorito(requestBody.getValor());
+        pokemon.setFavorito(requestBody.getFavorito());
         pokemonRepository.save(pokemon);
         return pokemon;
     }

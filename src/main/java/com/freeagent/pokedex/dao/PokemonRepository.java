@@ -20,7 +20,7 @@ public interface PokemonRepository extends JpaRepository<Pokemon, Integer> {
     @Query("SELECT  distinct(p) FROM Pokemon p "
             + "INNER JOIN PokemonTipoModo ptm ON ptm.pokemon.idPokemon = p.idPokemon "
             + "INNER JOIN Tipo t ON t.idTipo = ptm.tipo.idTipo "
-            + "WHERE lower(p.nombre) LIKE lower(concat('%', :nombre,'%')) "
+            + "WHERE (:nombre is null OR lower(p.nombre) LIKE lower(concat('%', :nombre,'%')) )"
             + "AND (:idTipo is null OR t.idTipo = :idTipo) AND ptm.modo.idModo = :tipo AND (:favorito is null OR :favorito = p.favorito)")
     List<Pokemon> findByNombreTipo(String nombre, Integer idTipo, Boolean favorito, Integer tipo, Pageable pageable);
 
